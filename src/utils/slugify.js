@@ -1,4 +1,3 @@
-// src/utils/slugify.js
 export default function slugify(text) {
   return text
     .toLowerCase()

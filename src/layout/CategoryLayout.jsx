@@ -33,19 +33,23 @@ function CategoryLayout ({ onAddToCart }) {
     });
   }, []);
 
-  useEffect(() => {
-    if (!categorySlug) return;
+ useEffect(() => {
+  if (!categorySlug) return;
 
-    const filtered = allProducts.filter((item) => {
-      const isMatchGroup = slugify(item.group || "") === categorySlug;
-      const isMatchCategory = subSlug
-        ? slugify(item.category || "") === subSlug
-        : true;
-      return isMatchGroup && isMatchCategory;
-    });
+  const filtered = allProducts.filter((item) => {
+    // BURAYA ƏLAVƏ ET ↓↓↓
+    console.log("🧪", item.group, "→", slugify(item.group));
 
-    setProducts(filtered);
-  }, [categorySlug, subSlug, allProducts]);
+    const isMatchGroup = slugify(item.group || "") === slugify(categorySlug);
+    const isMatchCategory = subSlug
+      ? slugify(item.category || "") === slugify(subSlug)
+      : true;
+
+    return isMatchGroup && isMatchCategory;
+  });
+
+  setProducts(filtered);
+}, [categorySlug, subSlug, allProducts]);
 
   const countProductsForChild = (parentName, childName) => {
     return allProducts.filter(
@@ -58,7 +62,8 @@ function CategoryLayout ({ onAddToCart }) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
   {/* Layout: Mobilde dikey, md və yuxarıda yanaşı */}
-  <div className="flex flex-col md:flex-row gap-8">
+ <div className="flex flex-col-reverse md:flex-row gap-8">
+
     
     {/* 🔹 Sidebar */}
     <aside className="w-full md:w-64">

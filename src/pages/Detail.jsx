@@ -8,24 +8,25 @@ function Detail() {
 
   return (
     <div className="flex flex-col md:flex-row bg-white px-6 md:px-12 py-10 gap-8 md:gap-10">
-  {/* Şəkil hissəsi */}
-  <div className="flex flex-col sm:flex-row items-start gap-4">
-    <div className="w-20 h-20 border rounded overflow-hidden flex-shrink-0 order-2 sm:order-1">
-      <img
-        src={product.img}
-        alt="thumb"
-        className="object-cover w-full h-full"
-      />
-    </div>
-
-    <div className="w-80 h-80 rounded overflow-hidden flex-shrink-0 order-1 sm:order-2">
-      <img
-        src={product.img}
-        alt={product.name}
-        className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
-      />
-    </div>
+{/* Şəkil hissəsi */}
+<div className="flex flex-col sm:flex-row items-start gap-4 w-full px-4">
+  <div className="w-20 h-20 border rounded overflow-hidden flex-shrink-0 order-2 sm:order-1">
+    <img
+      src={product.img}
+      alt="thumb"
+      className="object-cover w-full h-full"
+    />
   </div>
+
+  <div className="w-full max-w-[360px] mx-auto h-80 rounded overflow-hidden order-1 sm:order-2">
+    <img
+      src={product.img}
+      alt={product.name}
+      className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
+    />
+  </div>
+</div>
+
 
 
 
@@ -59,7 +60,7 @@ function Detail() {
         <div className="my-4 border-b border-gray-300" />
 
         {/* Say və səbət */}
-        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mt-3">
+       <div className="flex flex-col md:flex-row items-center md:items-start justify-center bg-white px-6 md:px-12 py-10 gap-8 md:gap-10">
           <div className="flex items-center border rounded self-start">
             <button
               onClick={() => setCount((c) => Math.max(1, c - 1))}

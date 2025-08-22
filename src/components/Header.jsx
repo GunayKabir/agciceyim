@@ -100,15 +100,7 @@ function Header({ dropdowns, cartItems, setIsBasketOpen }) {
         </div>
 
         {/* Mobil menyu */}
-        {menuOpen && (
-          <nav className="md:hidden bg-white shadow-md mt-4 p-4 rounded-b-lg space-y-4">
-            <Link to="/xidmetler" className="block text-gray-700 hover:text-blue-600">Xidmətlər</Link>
-            <Link to="/catdirilma" className="block text-gray-700 hover:text-blue-600">Çatdırılma və ödəniş</Link>
-            <Link to="/filiallar" className="block text-gray-700 hover:text-blue-600">Filiallar</Link>
-            <Link to="/statuslar" className="block text-gray-700 hover:text-blue-600">Statuslar</Link>
-            <a href="tel:+994553502121" className="block text-gray-700 hover:text-blue-600">+99455 3502121</a>
-          </nav>
-        )}
+       
       </header>
 
       {/* Naviqasiya menyusu */}
